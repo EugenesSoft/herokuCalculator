@@ -65,19 +65,22 @@ public class Controller {
 
         final String bText = buttonText;
 
-        if (bText.equals("C") || bText.equals("AC")) {
-
-            if (displayBuffer.lastIndexOf(selectedOperator) != -1)
-                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
-
-            if (bText.equals("AC")) {
-                left = BigDecimal.ZERO;
-                displayBuffer.setLength(0);
-            }
-            selectedOperator = "";
-            numberInputting = false;
+        if (bText.equals("AC")) {
+            left = BigDecimal.ZERO;
+            displayBuffer.setLength(0);
             display.setLength(0);
             display.append(left);
+            selectedOperator = "";
+            numberInputting = false;
+            operatorImputting = false;
+            return;
+        }
+        if (bText.equals("C")) {
+            if (displayBuffer.lastIndexOf(selectedOperator) != -1)
+                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
+            display.append(left);
+            selectedOperator = "";
+            numberInputting = false;
             operatorImputting = false;
             return;
         }
@@ -158,21 +161,21 @@ public class Controller {
 
         return left;
     }
-//
+
 //    public static void main(String[] args) {
 //
-////        String string = "08＋2";
-////
-////        String[] numbers = string.split("[＋－×÷]");
-////        String[] operators = string.split("[0-9\\.]");
-////
-////        for (String a : numbers) {
-////            System.out.println(a);
-////        }
-////        System.out.println("kjkj");
-////        for (String a : operators) {
-////            System.out.println(a);
-////        }
+//        /*String string = "08＋2";
+//
+//        String[] numbers = string.split("[＋－×÷]");
+//        String[] operators = string.split("[0-9\\.]");
+//
+//        for (String a : numbers) {
+//            System.out.println(a);
+//        }
+//        System.out.println("kjkj");
+//        for (String a : operators) {
+//            System.out.println(a);
+//        }*/
 //
 //        BigDecimal decimal = calculate("0084－2×9－2÷85");
 //        System.out.println(decimal);
