@@ -109,7 +109,7 @@ public class Controller {
         if (bText.equals("res")) {
             final BigDecimal right = numberInputting ? new BigDecimal(display.toString()) : left;
             final String result = displayBuffer.toString();
-            left = calculate(selectedOperator, left, right);
+            left = calculate(result);
             display.setLength(0);
             display.append(left.toString());
             numberInputting = false;
@@ -120,22 +120,6 @@ public class Controller {
 
     }
 
-    public static BigDecimal calculate(String operator, BigDecimal left, BigDecimal right) {
-        switch (operator) {
-            case "plus":
-                return left.add(right);
-            case "minus":
-                return left.subtract(right);
-            case "mult":
-                return left.multiply(right);
-            case "div":
-                if (right.toString().equals("0"))
-                    return right;
-                return left.divide(right);
-            default:
-        }
-        return right;
-    }
 
     public static BigDecimal calculate(String string) {
 
