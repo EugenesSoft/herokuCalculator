@@ -5,7 +5,7 @@
 <head>
     <title>Calculator</title>
     <%--<link rel="stylesheet" type="text/css" href="css/style.css"/>--%>
-    <link href="{{ url_for('webapp', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('css', filename='style.css') }}" rel="stylesheet">
 
     <%--<style>--%>
     <%--.button {--%>
