@@ -80,6 +80,7 @@ public class Controller {
                 displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
             displayBuffer.setLength(0);
             display.setLength(0);
+            display.append("0");
             selectedOperator = "";
             numberInputting = false;
             operatorImputting = false;
