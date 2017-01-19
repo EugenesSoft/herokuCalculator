@@ -5,7 +5,7 @@
 <head>
     <title>Calculator</title>
     <%--<link rel="stylesheet" type="text/css" href="css/style.css"/>--%>
-    <link href="{{ url_for('css', filename='style.css') }}" rel="stylesheet">
+    <link href="https://github.com/EugenesSoft/herokuCalculator/blob/master/src/main/webapp/css/style.css" rel="stylesheet">
 
     <%--<style>--%>
     <%--.button {--%>
