@@ -93,6 +93,8 @@ public class Controller {
             return;
         }
         if (bText.equals("plus") || bText.equals("minus") || bText.equals("div") || bText.equals("mult")) {
+            if (!numberInputting)
+                return;
             left = new BigDecimal(display.toString());
             selectedOperator = bText;
 
@@ -127,30 +129,53 @@ public class Controller {
         BigDecimal left = new BigDecimal(numbers[0]);
         BigDecimal right;
 
-        for (int i = 1; i < operators.length; i++) {
-
+        int counter = 0;
+        for (int i = 1; i < numbers.length; i++) {
             right = new BigDecimal(numbers[i]);
-            switch (operators[i]) {
-                case "＋":
-                    left = left.add(right);
-                    break;
-                case "－":
-                    left = left.subtract(right);
-                    break;
-                case "×":
-                    left = left.multiply(right);
-                    break;
-                case "÷":
-                    if (right.toString().equals("0"))
-                        return right;
-                    left = left.divide(right);
-                    break;
-                default:
+
+            for (int j = counter; counter < operators.length; counter++) {
+                if (operators[j].equals(""))
+                    continue;
+                switch (operators[j]) {
+                    case "＋":
+                        left = left.add(right);
+                        break;
+                    case "－":
+                        left = left.subtract(right);
+                        break;
+                    case "×":
+                        left = left.multiply(right);
+                        break;
+                    case "÷":
+                        if (right.toString().equals("0"))
+                            return right;
+                        left = left.divide(right);
+                        break;
+                    default:
+                }
             }
         }
 
         return left;
     }
 
+//    public static void main(String[] args) {
+//
+//        String string = "08＋2";
+//
+//        String[] numbers = string.split("[＋－×÷]");
+//        String[] operators = string.split("[0-9\\.]");
+//
+//        for (String a : numbers) {
+//            System.out.println(a);
+//        }
+//        System.out.println("kjkj");
+//        for (String a : operators) {
+//            System.out.println(a);
+//        }
+//
+//        BigDecimal decimal = calculate("008＋2");
+//        System.out.println(decimal);
+//    }
 
 }
