@@ -133,7 +133,7 @@ public class Controller {
         for (int i = 1; i < numbers.length; i++) {
             right = new BigDecimal(numbers[i]);
 
-            for (int j = counter; counter < operators.length; counter++) {
+            for (int j = counter; j < operators.length; counter++) {
                 if (operators[j].equals(""))
                     continue;
                 switch (operators[j]) {
@@ -161,20 +161,20 @@ public class Controller {
 
 //    public static void main(String[] args) {
 //
-//        String string = "08＋2";
+////        String string = "08＋2";
+////
+////        String[] numbers = string.split("[＋－×÷]");
+////        String[] operators = string.split("[0-9\\.]");
+////
+////        for (String a : numbers) {
+////            System.out.println(a);
+////        }
+////        System.out.println("kjkj");
+////        for (String a : operators) {
+////            System.out.println(a);
+////        }
 //
-//        String[] numbers = string.split("[＋－×÷]");
-//        String[] operators = string.split("[0-9\\.]");
-//
-//        for (String a : numbers) {
-//            System.out.println(a);
-//        }
-//        System.out.println("kjkj");
-//        for (String a : operators) {
-//            System.out.println(a);
-//        }
-//
-//        BigDecimal decimal = calculate("008＋2");
+//        BigDecimal decimal = calculate("85＋3－75");
 //        System.out.println(decimal);
 //    }
 
