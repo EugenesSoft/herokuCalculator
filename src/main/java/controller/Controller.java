@@ -59,7 +59,7 @@ public class Controller {
             selectedOperator = "";
             numberInputting = false;
             display.setLength(0);
-            display.append("0");
+            display.append(left);
             return;
         }
         if (bText.matches("[0-9\\.]")) {
