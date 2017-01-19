@@ -1,13 +1,18 @@
 package controller;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Controller {
 
     private BigDecimal left;
     private String selectedOperator;
     private boolean numberInputting;
+    private boolean operatorImputting;
     private StringBuffer display;
+    private StringBuffer displayBuffer;
+    private Map<String, String> operators;
 
     public StringBuffer getDisplay() {
         return display;
@@ -29,37 +34,54 @@ public class Controller {
         return numberInputting;
     }
 
-    public void setNumberInputting(boolean numberInputting) {
-        this.numberInputting = numberInputting;
-    }
-
     public String getSelectedOperator() {
         return selectedOperator;
     }
 
-    public void setSelectedOperator(String selectedOperator) {
-        this.selectedOperator = selectedOperator;
+    public StringBuffer getDisplayBuffer() {
+        return displayBuffer;
+    }
+
+    static
+    {
+        Map<String, String> operators = new HashMap<String, String>();
+        operators.put("plus", "＋");
+        operators.put("minus", "－");
+        operators.put("mult", "×");
+        operators.put("div", "÷");
     }
 
     public Controller() {
         this.left = BigDecimal.ZERO;
         this.selectedOperator = "";
         this.numberInputting = false;
-        display = new StringBuffer("0");
+        this.operatorImputting = false;
+        this.displayBuffer = new StringBuffer();
+        this.display = new StringBuffer("0");
     }
 
-    public void handleOnAnyButtonClicked(String evt) {
 
-        final String bText = evt;
+
+    public void handleOnAnyButtonClicked(String buttonText) {
+
+        final String bText = buttonText;
 
         if (bText.equals("C") || bText.equals("AC")) {
+
+            displayBuffer.setLength(0);
             if (bText.equals("AC")) {
                 left = BigDecimal.ZERO;
-            }
+                displayBuffer.append("");
+            } else
+                displayBuffer.append(left);
+
             selectedOperator = "";
             numberInputting = false;
             display.setLength(0);
             display.append(left);
+            displayBuffer.setLength(0);
+            displayBuffer.append(left);
+            operatorImputting = false;
             return;
         }
         if (bText.matches("[0-9\\.]")) {
@@ -68,12 +90,22 @@ public class Controller {
                 display.setLength(0);
             }
             display.append(bText);
+            displayBuffer.append(bText);
+            operatorImputting = false;
             return;
         }
         if (bText.equals("plus") || bText.equals("minus") || bText.equals("div") || bText.equals("mult")) {
             left = new BigDecimal(display.toString());
             selectedOperator = bText;
+
+            if (operatorImputting) {
+                displayBuffer.setLength(displayBuffer.length() - 1);
+                displayBuffer.append(operators.get(selectedOperator));
+            } else
+                displayBuffer.append(operators.get(selectedOperator));
+
             numberInputting = false;
+            operatorImputting = true;
             return;
         }
         if (bText.equals("res")) {
@@ -82,6 +114,8 @@ public class Controller {
             display.setLength(0);
             display.append(left.toString());
             numberInputting = false;
+            displayBuffer.setLength(0);
+            displayBuffer.append("");
             return;
         }
 

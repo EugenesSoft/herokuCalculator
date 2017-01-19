@@ -40,6 +40,7 @@ public class CalcServlet extends HttpServlet {
             controller.handleOnAnyButtonClicked(btn);
 
         request.setAttribute("result", controller.getDisplay().toString());
+        request.setAttribute("result2", controller.getDisplayBuffer().toString());
         request.getRequestDispatcher("calc.jsp").forward(request, response);
     }
 

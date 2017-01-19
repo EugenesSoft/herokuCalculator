@@ -59,19 +59,34 @@
         }
 
         .textArea {
-            border: 1px solid #9E9E9E;
+            margin-left: -4px;
+            text-align: right;
+            border: 0px solid #9E9E9E;
             color: #000000;
             padding: 3px;
-            margin-top: 2px;
-            margin-bottom: 2px;
+            margin-top: -5px;
+            margin-bottom: 0px;
             font-size: 25px;
             font-family: Verdana;
             background: #FFF;
-            width: 266px;
-            height: 55px;
+            width: 254px;
+            height: 45px;
             border-radius: 15px;
-            border: solid 5px black;
-            margin-bottom: 12px;
+        }
+        .textArea2 {
+            margin-left: -4px;
+            text-align: right;
+            border: 0px solid #9E9E9E;
+            color: #000000;
+            padding: 3px;
+            margin-top: -7px;
+            margin-bottom: 5px;
+            font-size: 15px;
+            font-family: Verdana;
+            background: #FFF;
+            height: 25px;
+            width: 254px;
+            border-radius: 15px;
         }
 
         .mainBlock {
@@ -86,6 +101,17 @@
             top: 40px;
             left: 33%;
         }
+
+        .displayBlock {
+            width: 245px;
+            height: 60px;
+            border-radius: 20px;
+            background: #FFF;
+            padding: 5px;
+            border: solid 5px black;
+            float: left;
+            position: relative;
+        }
     </style>
 
 </head>
@@ -94,7 +120,11 @@
     <br>
     <div class="mainBlock">
         <form>
-            <input class="textArea" name="result" value="${result}" type="text" readonly="readonly">
+            <div class="displayBlock ">
+                <input class="textArea" name="result" value="${result}" type="text" readonly="readonly">
+                <input class="textArea2" name="result" value="${result2}" type="text" readonly="readonly">
+            </div>
+
             <br>
             <button class="button" name="btn" type="submit" value="1">1</button>
             <button class="button" name="btn" type="submit" value="2">2</button>
