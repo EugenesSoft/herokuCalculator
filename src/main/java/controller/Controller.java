@@ -107,7 +107,6 @@ public class Controller {
             return;
         }
         if (bText.equals("res")) {
-            final BigDecimal right = numberInputting ? new BigDecimal(display.toString()) : left;
             final String result = displayBuffer.toString();
             left = calculate(result);
             display.setLength(0);
@@ -128,32 +127,30 @@ public class Controller {
         BigDecimal left = new BigDecimal(numbers[0]);
         BigDecimal right;
 
-        try {
-            for (int i = 0; i < operators.length; i++) {
+        for (int i = 1; i < operators.length; i++) {
 
-                right = new BigDecimal(numbers[i + 1]);
-                switch (operators[i]) {
-                    case "＋":
-                        return left.add(right);
-                    case "－":
-                        return left.subtract(right);
-                    case "×":
-                        return left.multiply(right);
-                    case "÷":
-                        if (right.toString().equals("0"))
-                            return right;
-                        return left.divide(right);
-                    default:
-                }
+            right = new BigDecimal(numbers[i]);
+            switch (operators[i]) {
+                case "＋":
+                    left = left.add(right);
+                    break;
+                case "－":
+                    left = left.subtract(right);
+                    break;
+                case "×":
+                    left = left.multiply(right);
+                    break;
+                case "÷":
+                    if (right.toString().equals("0"))
+                        return right;
+                    left = left.divide(right);
+                    break;
+                default:
             }
-
-        } catch (ArithmeticException e) {
-            left = new BigDecimal(0);
-        } finally {
-            return left;
         }
 
-
+        return left;
     }
+
 
 }
