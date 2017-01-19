@@ -67,9 +67,10 @@ public class Controller {
 
         if (bText.equals("C") || bText.equals("AC")) {
 
-            displayBuffer.setLength(0);
+
             if (bText.equals("AC")) {
                 left = BigDecimal.ZERO;
+                displayBuffer.setLength(0);
                 displayBuffer.append("");
             } else
                 displayBuffer.append(left);
