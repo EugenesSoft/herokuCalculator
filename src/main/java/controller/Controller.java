@@ -42,15 +42,6 @@ public class Controller {
         return displayBuffer;
     }
 
-    static
-    {
-        Map<String, String> operators = new HashMap<String, String>();
-        operators.put("plus", "＋");
-        operators.put("minus", "－");
-        operators.put("mult", "×");
-        operators.put("div", "÷");
-    }
-
     public Controller() {
         this.left = BigDecimal.ZERO;
         this.selectedOperator = "";
@@ -58,6 +49,12 @@ public class Controller {
         this.operatorImputting = false;
         this.displayBuffer = new StringBuffer();
         this.display = new StringBuffer("0");
+
+        operators = new HashMap<String, String>();
+        operators.put("plus", "＋");
+        operators.put("minus", "－");
+        operators.put("mult", "×");
+        operators.put("div", "÷");
     }
 
 
