@@ -133,9 +133,10 @@ public class Controller {
         for (int i = 1; i < numbers.length; i++) {
             right = new BigDecimal(numbers[i]);
 
-            for (int j = counter; j < operators.length; counter++) {
+            for (int j = counter; j < operators.length; j++) {
                 if (operators[j].equals(""))
                     continue;
+                counter = j+1;
                 switch (operators[j]) {
                     case "＋":
                         left = left.add(right);
@@ -174,7 +175,7 @@ public class Controller {
 ////            System.out.println(a);
 ////        }
 //
-//        BigDecimal decimal = calculate("85＋3－75");
+//        BigDecimal decimal = calculate("02＋3");
 //        System.out.println(decimal);
 //    }
 
