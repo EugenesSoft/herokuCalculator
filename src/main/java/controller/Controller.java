@@ -154,6 +154,7 @@ public class Controller {
                         break;
                     default:
                 }
+                break;
             }
         }
 
@@ -175,7 +176,7 @@ public class Controller {
 ////            System.out.println(a);
 ////        }
 //
-//        BigDecimal decimal = calculate("02＋3");
+//        BigDecimal decimal = calculate("8÷4×2");
 //        System.out.println(decimal);
 //    }
 
