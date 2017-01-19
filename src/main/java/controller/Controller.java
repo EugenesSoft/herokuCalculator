@@ -1,7 +1,9 @@
 package controller;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Controller {
@@ -12,7 +14,7 @@ public class Controller {
     private boolean operatorImputting;
     private StringBuffer display;
     private StringBuffer displayBuffer;
-    private Map<String, String> operators;
+    private static Map<String, String> operators;
 
     public StringBuffer getDisplay() {
         return display;
@@ -56,7 +58,6 @@ public class Controller {
         operators.put("mult", "×");
         operators.put("div", "÷");
     }
-
 
 
     public void handleOnAnyButtonClicked(String buttonText) {
@@ -107,6 +108,7 @@ public class Controller {
         }
         if (bText.equals("res")) {
             final BigDecimal right = numberInputting ? new BigDecimal(display.toString()) : left;
+            final String result = displayBuffer.toString();
             left = calculate(selectedOperator, left, right);
             display.setLength(0);
             display.append(left.toString());
@@ -133,6 +135,41 @@ public class Controller {
             default:
         }
         return right;
+    }
+
+    public static BigDecimal calculate(String string) {
+
+        String[] numbers = string.split("[＋－×÷]");
+        String[] operators = string.split("[0-9\\.]");
+        BigDecimal left = new BigDecimal(numbers[0]);
+        BigDecimal right;
+
+        try {
+            for (int i = 0; i < operators.length; i++) {
+
+                right = new BigDecimal(numbers[i + 1]);
+                switch (operators[i]) {
+                    case "＋":
+                        return left.add(right);
+                    case "－":
+                        return left.subtract(right);
+                    case "×":
+                        return left.multiply(right);
+                    case "÷":
+                        if (right.toString().equals("0"))
+                            return right;
+                        return left.divide(right);
+                    default:
+                }
+            }
+
+        } catch (ArithmeticException e) {
+            left = new BigDecimal(0);
+        } finally {
+            return left;
+        }
+
+
     }
 
 }
