@@ -4,76 +4,75 @@
 <html>
 <head>
     <title>Calculator</title>
-    <%--<link rel="stylesheet" type="text/css" href="css/style.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-    <h:outputStylesheet library="css" name="style.css" />
 
-    <%--<style>--%>
-    <%--.button {--%>
-    <%--font-weight: 700;--%>
-    <%--text-align: center;--%>
-    <%--color: white;--%>
-    <%--text-decoration: none;--%>
-    <%--padding: .8em 1em calc(.8em + 3px);--%>
-    <%--border-radius: 3px;--%>
-    <%--background: rgb(64, 199, 129);--%>
-    <%--box-shadow: 0 -3px rgb(53, 167, 110) inset;--%>
-    <%--transition: 0.2s;--%>
+    <style>
+    .button {
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64, 199, 129);
+    box-shadow: 0 -3px rgb(53, 167, 110) inset;
+    transition: 0.2s;
 
-    <%--width: 50px;--%>
-    <%--height: 50px;--%>
-    <%--}--%>
+    width: 50px;
+    height: 50px;
+    }
 
-    <%--button:hover {--%>
-    <%--background: rgb(53, 167, 110);--%>
-    <%--}--%>
+    button:hover {
+    background: rgb(53, 167, 110);
+    }
 
-    <%--button:active {--%>
-    <%--background: rgb(33, 147, 90);--%>
-    <%--box-shadow: 0 3px rgb(33, 147, 90) inset;--%>
-    <%--}--%>
+    button:active {
+    background: rgb(33, 147, 90);
+    box-shadow: 0 3px rgb(33, 147, 90) inset;
+    }
 
-    <%--.buttonNumber {--%>
-    <%--width: 50px;--%>
-    <%--height: 50px;--%>
-    <%--}--%>
+    .buttonNumber {
+    width: 50px;
+    height: 50px;
+    }
 
-    <%--.buttonZero {--%>
-    <%--width: 104px;--%>
-    <%--height: 50px;--%>
-    <%--}--%>
+    .buttonZero {
+    width: 104px;
+    height: 50px;
+    }
 
-    <%--.buttonResult {--%>
-    <%--width: 50px;--%>
-    <%--height: 100px;--%>
-    <%--float: right;--%>
-    <%--}--%>
+    .buttonResult {
+    width: 50px;
+    height: 100px;
+    float: right;
+    }
 
-    <%--.textArea {--%>
-    <%--border: 1px solid #9E9E9E;--%>
-    <%--color: #000000;--%>
-    <%--padding: 3px;--%>
-    <%--margin-top: 2px;--%>
-    <%--margin-bottom: 2px;--%>
-    <%--font-size: 25px;--%>
-    <%--font-family: Verdana;--%>
-    <%--background: #FFF;--%>
-    <%--width: 266px;--%>
-    <%--height: 50px;--%>
-    <%--}--%>
+    .textArea {
+    border: 1px solid #9E9E9E;
+    color: #000000;
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 25px;
+    font-family: Verdana;
+    background: #FFF;
+    width: 266px;
+    height: 50px;
+    }
 
-    <%--.mainBlock {--%>
-    <%--width: 266px;--%>
-    <%--height: 253px;--%>
-    <%--background: #fff819;--%>
-    <%--padding: 5px;--%>
-    <%--border: solid 1px black;--%>
-    <%--float: left;--%>
-    <%--position: relative;--%>
-    <%--top: 40px;--%>
-    <%--left: 33%;--%>
-    <%--}--%>
-    <%--</style>--%>
+    .mainBlock {
+    width: 266px;
+    height: 253px;
+    background: #fff819;
+    padding: 5px;
+    border: solid 1px black;
+    float: left;
+    position: relative;
+    top: 40px;
+    left: 33%;
+    }
+    </style>
 
 </head>
 <body>
