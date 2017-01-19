@@ -5,7 +5,8 @@
 <head>
     <title>Calculator</title>
     <%--<link rel="stylesheet" type="text/css" href="css/style.css"/>--%>
-    <link href="https://github.com/EugenesSoft/herokuCalculator/blob/master/src/main/webapp/css/style.css" rel="stylesheet">
+
+    <h:outputStylesheet library="css" name="style.css" />
 
     <%--<style>--%>
     <%--.button {--%>
