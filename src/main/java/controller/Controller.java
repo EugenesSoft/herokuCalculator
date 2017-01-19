@@ -1,6 +1,7 @@
 package controller;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -72,6 +73,10 @@ public class Controller {
                 displayBuffer.append("");
             } else
                 displayBuffer.append(left);
+
+            if(displayBuffer.lastIndexOf(selectedOperator) != -1){
+                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator)+1);
+            }
 
             selectedOperator = "";
             numberInputting = false;
@@ -150,7 +155,7 @@ public class Controller {
                     case "÷":
                         if (right.toString().equals("0"))
                             return right;
-                        left = left.divide(right);
+                        left = left.divide(right, MathContext.DECIMAL32);
                         break;
                     default:
                 }
@@ -176,7 +181,7 @@ public class Controller {
 ////            System.out.println(a);
 ////        }
 //
-//        BigDecimal decimal = calculate("8÷4×2");
+//        BigDecimal decimal = calculate("0084－2×9－2÷85");
 //        System.out.println(decimal);
 //    }
 
