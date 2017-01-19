@@ -78,7 +78,7 @@ public class Controller {
         if (bText.equals("C")) {
             if (displayBuffer.lastIndexOf(selectedOperator) != -1)
                 displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
-            display.append(left);
+            display.setLength(0);
             selectedOperator = "";
             numberInputting = false;
             operatorImputting = false;
