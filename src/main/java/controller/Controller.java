@@ -98,8 +98,7 @@ public class Controller {
             return;
         }
         if (bText.equals("plus") || bText.equals("minus") || bText.equals("div") || bText.equals("mult")) {
-            if (!numberInputting)
-                return;
+
             left = new BigDecimal(display.toString());
             selectedOperator = bText;
 
