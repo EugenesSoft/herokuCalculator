@@ -72,11 +72,10 @@ public class Controller {
                 left = BigDecimal.ZERO;
                 displayBuffer.setLength(0);
                 displayBuffer.append("");
-            } else
-                displayBuffer.append(left);
+            }
 
-            if(displayBuffer.lastIndexOf(selectedOperator) != -1){
-                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator)+1);
+            if (displayBuffer.lastIndexOf(selectedOperator) != -1) {
+                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator) + 1);
             }
 
             selectedOperator = "";
@@ -139,7 +138,7 @@ public class Controller {
             for (int j = counter; j < operators.length; j++) {
                 if (operators[j].equals(""))
                     continue;
-                counter = j+1;
+                counter = j + 1;
                 switch (operators[j]) {
                     case "＋":
                         left = left.add(right);
