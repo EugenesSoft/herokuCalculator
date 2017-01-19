@@ -67,16 +67,13 @@ public class Controller {
 
         if (bText.equals("C") || bText.equals("AC")) {
 
+            if (displayBuffer.lastIndexOf(selectedOperator) != -1)
+                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
 
             if (bText.equals("AC")) {
                 left = BigDecimal.ZERO;
                 displayBuffer.setLength(0);
             }
-
-            if (displayBuffer.lastIndexOf(selectedOperator) != -1) {
-                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
-            }
-
             selectedOperator = "";
             numberInputting = false;
             display.setLength(0);
