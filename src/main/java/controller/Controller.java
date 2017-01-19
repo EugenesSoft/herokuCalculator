@@ -82,8 +82,6 @@ public class Controller {
             numberInputting = false;
             display.setLength(0);
             display.append(left);
-            displayBuffer.setLength(0);
-            displayBuffer.append(left);
             operatorImputting = false;
             return;
         }
