@@ -71,11 +71,10 @@ public class Controller {
             if (bText.equals("AC")) {
                 left = BigDecimal.ZERO;
                 displayBuffer.setLength(0);
-                displayBuffer.append("");
             }
 
             if (displayBuffer.lastIndexOf(selectedOperator) != -1) {
-                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator) + 1);
+                displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
             }
 
             selectedOperator = "";
@@ -162,7 +161,7 @@ public class Controller {
 
         return left;
     }
-
+//
 //    public static void main(String[] args) {
 //
 ////        String string = "08＋2";
@@ -180,6 +179,14 @@ public class Controller {
 //
 //        BigDecimal decimal = calculate("0084－2×9－2÷85");
 //        System.out.println(decimal);
+//
+//        StringBuffer buffer = new StringBuffer("25+3+8-5");
+//
+//        if (buffer.lastIndexOf("-") != -1) {
+//            buffer.setLength(buffer.lastIndexOf("-"));
+//            System.out.println(buffer);
+//        }
+//
 //    }
 
 }
