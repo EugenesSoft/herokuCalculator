@@ -76,7 +76,7 @@ public class Controller {
             return;
         }
         if (bText.equals("C")) {
-            if (displayBuffer.lastIndexOf(selectedOperator) != -1)
+            if (displayBuffer.lastIndexOf(selectedOperator) > 1)
                 displayBuffer.setLength(displayBuffer.lastIndexOf(selectedOperator));
             displayBuffer.setLength(0);
             display.setLength(0);
@@ -125,6 +125,8 @@ public class Controller {
 
 
     public static BigDecimal calculate(String string) {
+        if(string.isEmpty() || string.equals(""))
+            return new BigDecimal(0);
 
         String[] numbers = string.split("[＋－×÷]");
         String[] operators = string.split("[0-9\\.]");
@@ -187,7 +189,6 @@ public class Controller {
 //            buffer.setLength(buffer.lastIndexOf("-"));
 //            System.out.println(buffer);
 //        }
-//
 //    }
 
 }
