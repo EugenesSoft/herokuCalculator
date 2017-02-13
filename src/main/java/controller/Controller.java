@@ -15,7 +15,14 @@ public class Controller {
     private boolean operatorImputting;
     private StringBuffer display;
     private StringBuffer displayBuffer;
-    private static Map<String, String> operators;
+    private static Map<String, String> operators = new HashMap<String, String>();;
+
+    static {
+        operators.put("plus", "＋");
+        operators.put("minus", "－");
+        operators.put("mult", "×");
+        operators.put("div", "÷");
+    }
 
     public StringBuffer getDisplay() {
         return display;
@@ -52,12 +59,6 @@ public class Controller {
         this.operatorImputting = false;
         this.displayBuffer = new StringBuffer();
         this.display = new StringBuffer("0");
-
-        operators = new HashMap<String, String>();
-        operators.put("plus", "＋");
-        operators.put("minus", "－");
-        operators.put("mult", "×");
-        operators.put("div", "÷");
     }
 
 
@@ -130,6 +131,9 @@ public class Controller {
             return new BigDecimal(0);
 
         String[] numbers = string.split("[＋－×÷]");
+        if("".equals(numbers[0]))
+            numbers[0] = "0";
+
         String[] operators = string.split("[0-9\\.]");
         BigDecimal left = new BigDecimal(numbers[0]);
         BigDecimal right;
@@ -166,6 +170,7 @@ public class Controller {
         return left;
     }
 
+    /* TEST */
 //    public static void main(String[] args) {
 //
 //        /*String string = "08＋2";
@@ -181,7 +186,7 @@ public class Controller {
 //            System.out.println(a);
 //        }*/
 //
-//        BigDecimal decimal = calculate("0084－2×9－2÷85");
+//        BigDecimal decimal = calculate("－2");
 //        System.out.println(decimal);
 //
 //        StringBuffer buffer = new StringBuffer("25+3+8-5");
