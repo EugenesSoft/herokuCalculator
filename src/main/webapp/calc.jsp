@@ -4,115 +4,115 @@
 <html>
 <head>
     <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resourses/css/style.css"/>
 
 
-    <style>
-        .button {
-            font-size: 22px;
+    <%--<style>--%>
+        <%--.button {--%>
+            <%--font-size: 22px;--%>
 
-            font-weight: 900;
+            <%--font-weight: 900;--%>
 
-            text-align: center;
-            color: #295EAC;
-            text-decoration: none;
+            <%--text-align: center;--%>
+            <%--color: #295EAC;--%>
+            <%--text-decoration: none;--%>
 
-            border-radius: 15px;
-            background: #BDDFFB;
-            transition: 0.2s;
-            border: solid 3px black;
-            margin-top: 3px;
+            <%--border-radius: 15px;--%>
+            <%--background: #BDDFFB;--%>
+            <%--transition: 0.2s;--%>
+            <%--border: solid 3px black;--%>
+            <%--margin-top: 3px;--%>
 
-            width: 50px;
-            height: 50px;
-        }
+            <%--width: 50px;--%>
+            <%--height: 50px;--%>
+        <%--}--%>
 
-        .button:hover {
-            background: #92C4EC;
-        }
+        <%--.button:hover {--%>
+            <%--background: #92C4EC;--%>
+        <%--}--%>
 
-        .buttonCAC {
-            color: #FFFFFF;
-            background: #F54848;
-        }
+        <%--.buttonCAC {--%>
+            <%--color: #FFFFFF;--%>
+            <%--background: #F54848;--%>
+        <%--}--%>
 
-        .buttonCAC:hover {
-            background: #EF2A2A;
-        }
+        <%--.buttonCAC:hover {--%>
+            <%--background: #EF2A2A;--%>
+        <%--}--%>
 
-        .buttonZero {
-            width: 104px;
-            height: 50px;
-        }
+        <%--.buttonZero {--%>
+            <%--width: 104px;--%>
+            <%--height: 50px;--%>
+        <%--}--%>
 
-        .buttonResult {
-            width: 50px;
-            height: 103px;
-            float: right;
-            color: #FFFFFF;
-            background: #1DBA2A;
-            margin-right: 1px;
-        }
+        <%--.buttonResult {--%>
+            <%--width: 50px;--%>
+            <%--height: 103px;--%>
+            <%--float: right;--%>
+            <%--color: #FFFFFF;--%>
+            <%--background: #1DBA2A;--%>
+            <%--margin-right: 1px;--%>
+        <%--}--%>
 
-        .buttonResult:hover {
-            background: #0B9217;
-        }
+        <%--.buttonResult:hover {--%>
+            <%--background: #0B9217;--%>
+        <%--}--%>
 
-        .textArea {
-            margin-left: -4px;
-            text-align: right;
-            border: 0px solid #9E9E9E;
-            color: #000000;
-            padding: 3px;
-            margin-top: -5px;
-            margin-bottom: 0px;
-            font-size: 25px;
-            font-family: Verdana;
-            background: #FFF;
-            width: 254px;
-            height: 45px;
-            border-radius: 15px;
-        }
-        .textArea2 {
-            margin-left: -4px;
-            text-align: right;
-            border: 0px solid #9E9E9E;
-            color: #000000;
-            padding: 3px;
-            margin-top: -7px;
-            margin-bottom: 5px;
-            font-size: 15px;
-            font-family: Verdana;
-            background: #FFF;
-            height: 25px;
-            width: 254px;
-            border-radius: 15px;
-        }
+        <%--.textArea {--%>
+            <%--margin-left: -4px;--%>
+            <%--text-align: right;--%>
+            <%--border: 0px solid #9E9E9E;--%>
+            <%--color: #000000;--%>
+            <%--padding: 3px;--%>
+            <%--margin-top: -5px;--%>
+            <%--margin-bottom: 0px;--%>
+            <%--font-size: 25px;--%>
+            <%--font-family: Verdana;--%>
+            <%--background: #FFF;--%>
+            <%--width: 254px;--%>
+            <%--height: 45px;--%>
+            <%--border-radius: 15px;--%>
+        <%--}--%>
+        <%--.textArea2 {--%>
+            <%--margin-left: -4px;--%>
+            <%--text-align: right;--%>
+            <%--border: 0px solid #9E9E9E;--%>
+            <%--color: #000000;--%>
+            <%--padding: 3px;--%>
+            <%--margin-top: -7px;--%>
+            <%--margin-bottom: 5px;--%>
+            <%--font-size: 15px;--%>
+            <%--font-family: Verdana;--%>
+            <%--background: #FFF;--%>
+            <%--height: 25px;--%>
+            <%--width: 254px;--%>
+            <%--border-radius: 15px;--%>
+        <%--}--%>
 
-        .mainBlock {
-            border-radius: 20px;
-            width: 267px;
-            height: 290px;
-            background: #409EFE;
-            padding: 5px;
-            border: solid 7px black;
-            float: left;
-            position: relative;
-            top: 40px;
-            left: 33%;
-        }
+        <%--.mainBlock {--%>
+            <%--border-radius: 20px;--%>
+            <%--width: 267px;--%>
+            <%--height: 290px;--%>
+            <%--background: #409EFE;--%>
+            <%--padding: 5px;--%>
+            <%--border: solid 7px black;--%>
+            <%--float: left;--%>
+            <%--position: relative;--%>
+            <%--top: 40px;--%>
+            <%--left: 33%;--%>
+        <%--}--%>
 
-        .displayBlock {
-            width: 245px;
-            height: 60px;
-            border-radius: 20px;
-            background: #FFF;
-            padding: 5px;
-            border: solid 5px black;
-            float: left;
-            position: relative;
-        }
-    </style>
+        <%--.displayBlock {--%>
+            <%--width: 245px;--%>
+            <%--height: 60px;--%>
+            <%--border-radius: 20px;--%>
+            <%--background: #FFF;--%>
+            <%--padding: 5px;--%>
+            <%--border: solid 5px black;--%>
+            <%--float: left;--%>
+            <%--position: relative;--%>
+        <%--}--%>
+    <%--</style>--%>
 
 </head>
 <body>
