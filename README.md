@@ -1,1 +1,1 @@
-# heroku
+Calculator, deployed on heroku with address https://lolcalculator.herokuapp.com
